@@ -21,6 +21,7 @@ const userController =
   require('./controllers/UserController');
   app.post('/user',userController.store);
   app.get('/user',userController.show);
+  app.get('/user/buscaemail/*',userController.index);
 
 
 
