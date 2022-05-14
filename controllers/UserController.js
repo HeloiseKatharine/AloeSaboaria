@@ -7,5 +7,9 @@ module.exports = {
 
     return res.json(user);
       
-    }
+    },
+  async show(req, res){ 
+    let user = await User.find();
+    return res.json(user);
+  }
 };
