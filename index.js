@@ -63,6 +63,12 @@ app.post('/api/echobody', (req,res) => {
 });
 
 
+// exclui user
+//req.params  = route params (post, put, delete)
+app.delete('/user/:id', userController.destroy);
+
+
+
 app.listen(3000, () => console.log('server started'));
 
 
