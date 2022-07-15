@@ -12,7 +12,7 @@ module.exports =
             },
             {
               name: 'Helo', 
-              email: 'hen@hotmail.com'
+              email: 'helo@hotmail.com'
             }
           ]
         return res.json(users);

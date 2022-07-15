@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const User = require('../models/User');
 
 module.exports = {
@@ -23,7 +22,6 @@ module.exports = {
          return res.json(user);
     },
 
-  // altera usuario
   async update(req,res){
       let user = await User.findByIdAndUpdate(req.params.id,req.body,{new:true}); 
         return res.json(user);

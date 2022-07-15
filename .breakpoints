@@ -1,0 +1,28 @@
+{
+  "files": {
+    "index.js": [
+      {
+        "id": "ea1ab21c-3cd5-4f6c-a415-9d4ea0403052",
+        "line": 30,
+        "version": 343,
+        "index": 1046
+      }
+    ],
+    "models/App.js": [
+      {
+        "id": "8e35fa87-e519-49a6-ba05-3dad0963ae34",
+        "line": 1,
+        "version": 5,
+        "index": 0
+      }
+    ],
+    "models/connection_db.js": [
+      {
+        "id": "9d3f6d3f-c514-4d08-b258-9f628c378068",
+        "line": 18,
+        "version": 398,
+        "index": 502
+      }
+    ]
+  }
+}
