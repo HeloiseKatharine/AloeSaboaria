@@ -7,11 +7,13 @@ const sequelize = require('./models/connection_db');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-(async () => {
-  const cliente = require('./models/ClienteDAO');
-  await sequelize.sync();
 
-})();
+
+sequelize.authenticate().then(() => {
+  console.log("Success!");
+}).catch((err) => {
+  console.log(err);
+});
 
 
 
