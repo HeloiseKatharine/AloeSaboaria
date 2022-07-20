@@ -1,5 +1,4 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("postgresql::memory:");
+const { Sequelize, DataTypes } = require("sequelize");
 
 const Cliente = sequelize.define("cliente",{
   nome: DataTypes.TEXT,

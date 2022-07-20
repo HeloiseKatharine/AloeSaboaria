@@ -3,9 +3,9 @@
     "index.js": [
       {
         "id": "ea1ab21c-3cd5-4f6c-a415-9d4ea0403052",
-        "line": 41,
-        "version": 854,
-        "index": 1135
+        "line": 45,
+        "version": 878,
+        "index": 1169
       }
     ],
     "models/App.js": [
@@ -20,8 +20,8 @@
       {
         "id": "9d3f6d3f-c514-4d08-b258-9f628c378068",
         "line": 26,
-        "version": 591,
-        "index": 715
+        "version": 592,
+        "index": 717
       }
     ]
   }
