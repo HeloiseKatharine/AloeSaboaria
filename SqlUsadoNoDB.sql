@@ -12,7 +12,7 @@ cpf varchar(30) primary key not null,
 email varchar(50) not null,
 senha varchar(60) not null
 );
-drop  table pedido;
+drop table pedido;
 create table pedido(
 id SERIAL primary key ,
 endereco varchar(300) not null,
@@ -20,20 +20,20 @@ frete numeric(10,2),
 valor_pedido numeric(10,2),
 dataPedido date,
 cpf_cliente varchar(30) not null,
-
-
+constraint fk_cpf_cliente foreign key(cpf_cliente) references cliente(cpf)
 ); 
 
-drop table pedido_realizado; 
-create table pedido_realizado(
-id Serial primary key,
-cpf_cliente varchar(30) not null,
-id_pedido integer not null,
-dataPedido date,
-constraint fk_pedidos_realizados foreign key(id_pedido) references pedido(id),
-constraint fk_cpf_cliente foreign key(cpf_cliente) references cliente(cpf)
-);
+--drop table pedido_realizado; 
+--create table pedido_realizado(
+--id Serial primary key,
+--cpf_cliente varchar(30) not null,
+--id_pedido integer not null,
+--dataPedido date,
+--constraint fk_pedidos_realizados foreign key(id_pedido) references pedido(id),
+--constraint fk_cpf_cliente foreign key(cpf_cliente) references cliente(cpf)
+--);
 
+drop table pedido_produto; 
 create table pedido_produto(
 id Serial primary key,
 id_pedido int not null,
@@ -48,7 +48,8 @@ peso numeric(5,5),
 categoria varchar(30),
 valor numeric(5,2) not null,
 nome varchar(50) not null,
-descricao varchar(300)
+descricao varchar(300),
+quantidade numeric
 );
 create table transportadora(
 id Serial primary key,
@@ -56,6 +57,7 @@ codigo_rastreio varchar(50),
 nome varchar(70),
 url varchar(50)
 );
+drop table pedido_enviado;
 create table pedido_enviado(
 id Serial primary key,
 id_pedido int not null,
@@ -84,5 +86,3 @@ insert into pedido(endereco) values('areal');
 select * from pedido;
 select * from produto;
 insert into pedido_produto(id_pedido,id_produto,quant_produtos) values(1,2,5);
-
-
