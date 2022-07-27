@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require("sequelize");
+const { sequelize, DataTypes } = require("sequelize");
 
 const Transportadora = sequelize.define("transportadora",{
     codigo_rastreio : DataTypes.TEXT,

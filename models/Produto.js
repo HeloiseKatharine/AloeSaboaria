@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require("sequelize");
+const { sequelize, DataTypes } = require("sequelize");
 
 const Produto = sequelize.define("produto",{
     peso : DataTypes.Number,
