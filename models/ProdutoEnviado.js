@@ -1,4 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const Pedido = require('./Pedido');
+const Transportadora = require('./Transportadora');
 
 const ProdutoEnviado = sequelize.define("produto_enviado",{
     id_pedido: {
