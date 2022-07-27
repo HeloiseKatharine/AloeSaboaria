@@ -12,6 +12,13 @@ cpf varchar(30) primary key not null,
 email varchar(50) not null,
 senha varchar(60) not null
 );
+create  view viw_pessoa as
+select nome, cpf, email, senha
+from cliente 
+union
+select nome, cpf, email, senha
+from administrador;
+
 drop table pedido;
 create table pedido(
 id SERIAL primary key ,
@@ -66,6 +73,14 @@ data_envio date,
 constraint fk_pedido foreign key(id_pedido) references pedido(id),
 constraint fk_transportadora foreign key(id_transportadora) references transportadora(id)
 );
+
+create view produtos_enviados as
+select pr.nome as nome_produto, pe.data_envio, t.nome as nome_transportadora
+from pedido_enviado pe 
+inner join pedido p on p.id = pe.id_pedido
+inner join pedido_produto pp  on pp.id_pedido = p.id 
+inner join produto pr on pr.id = pp.id_produto
+inner join transportadora t on t.id = id_transportadora;
 
 CREATE OR REPLACE FUNCTION diminui_quantidade_produtos()
  RETURNS trigger
